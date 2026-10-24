@@ -6,6 +6,8 @@ Climathon 2026 (Siemens × YGA × UP School) · Hüseyin Eren Kılıç
 
 Canlı araç: **[esnek-baglanti.vercel.app](https://esnek-baglanti.vercel.app)**
 
+Google AI Studio sürümü: **[ai.studio/apps/2c1a9d31-ffa0-4cac-823a-fa5b36918101](https://ai.studio/apps/2c1a9d31-ffa0-4cac-823a-fa5b36918101)** (aynı kod GitHub'dan AI Studio'ya aktarıldı; sayılar canlı araçla aynı, planlama notu AI Studio sunucusunda Gemini ile yazılıyor)
+
 Türkiye'de 2024–2025'te 11,6 GW lisanssız GES/RES başvurusunun %65'i kapasite yok denerek reddedildi ([Ember](https://ember-energy.org/latest-insights/turkiye-can-bypass-grid-constraints-with-hybrid-solar-power-plants/grid-connection-capacity-challenges-in-turkiye-and/)). Kapasite, en kötü iki anın (tam üretim + en düşük yük) aynı anda olacağını varsayan statik bir kuralla hesaplanıyor. Bu araç, bir trafo merkezi için gerçek hava ve yük belirsizliğini saat saat simüle ederek esnek (kısılabilir) bağlantıyla kaç MW daha bağlanabileceğini ve bunun yıllık kısıntı bedelini (P50/P90) hesaplar.
 
 TEİAŞ'ın 01.10.2026 tarihli tablosunda 794 trafo merkezinin **346'sında (%43,6) kalan kapasite sıfır**; ülke genelindeki kalan kapasite 2,5 ayda 833,59 MWe'den 625,10 MWe'ye, yani %25 düştü.
@@ -189,7 +191,7 @@ Emisyon hesabı "esnek bağlantı olmasaydı bu MW hiç bağlanmazdı" der. Bu b
 
 **Canlıya alma.** GitHub → Vercel (Root Directory `web`). Ağır hesap tarayıcıda; sunucuda yalnızca planlama notu fonksiyonu çalışıyor, API anahtarı istemciye gitmiyor.
 
-**Limitlere takılınca.** Gemini erişilemezse not Claude'a, o da yoksa sabit şablona düşüyor; demo hiçbir durumda boş kalmıyor. Open-Meteo'nun hız sınırı demo sırasında boş ekran riski yarattığı için demo trafolarının 20 yıllık hava verisi önceden çekilip statik dosyaya konuldu (`model/hava_onbellek.py`). Google AI Studio Build modu çekirdek hesabı (tarayıcıda 100+ senaryo × 8.760 saat Monte Carlo ve Python'da eğitilen model) karşılamadığı için uygulama Vite + TypeScript ile yazıldı.
+**Limitlere takılınca.** Gemini erişilemezse not Claude'a, o da yoksa sabit şablona düşüyor; demo hiçbir durumda boş kalmıyor. Open-Meteo'nun hız sınırı demo sırasında boş ekran riski yarattığı için demo trafolarının 20 yıllık hava verisi önceden çekilip statik dosyaya konuldu (`model/hava_onbellek.py`). Google AI Studio Build modu çekirdek hesabı (tarayıcıda 100+ senaryo × 8.760 saat Monte Carlo ve Python'da eğitilen model) karşılamadığı için uygulama Vite + TypeScript ile yazıldı. Aynı Vite + TypeScript kodu sonradan GitHub'dan Google AI Studio'ya aktarıldı ve orada da çalışıyor; büyük veri dosyaları canlı araçtan okunuyor, planlama notu uç noktası AI Studio sunucusuna taşındı.
 
 **Yapay zekânın kendi ayak izi.** Yük modeli GPU'suz, sıradan bir bilgisayarda dakikalar içinde eğitiliyor; uygulamadaki hesap kullanıcının tarayıcısında saniyeler sürüyor. Bunun enerji tüketimi, tek bir trafo merkezinde önlenen yıllık ≈ 11.700 tCO₂'nin yanında ihmal edilebilir mertebede.
 
