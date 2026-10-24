@@ -6,7 +6,7 @@ Climathon 2026 (Siemens × YGA × UP School) · Hüseyin Eren Kılıç
 
 Canlı araç: **[esnek-baglanti.vercel.app](https://esnek-baglanti.vercel.app)**
 
-Google AI Studio sürümü: **[ai.studio/apps/2c1a9d31-ffa0-4cac-823a-fa5b36918101](https://ai.studio/apps/2c1a9d31-ffa0-4cac-823a-fa5b36918101)** (aynı kod GitHub'dan AI Studio'ya aktarıldı; sayılar canlı araçla aynı, planlama notu AI Studio sunucusunda Gemini ile yazılıyor)
+Google AI Studio sürümü: **[ai.studio/apps/2c1a9d31-ffa0-4cac-823a-fa5b36918101](https://ai.studio/apps/2c1a9d31-ffa0-4cac-823a-fa5b36918101)** (aynı kod GitHub'dan AI Studio'ya aktarıldı; sayılar canlı araçla aynı, planlama notu AI Studio sunucusunda Gemini ile yazılıyor) · AI Studio sürümünün kodu: [HErenKlc/esnek-baglanti-aistudio](https://github.com/HErenKlc/esnek-baglanti-aistudio)
 
 Türkiye'de 2024–2025'te 11,6 GW lisanssız GES/RES başvurusunun %65'i kapasite yok denerek reddedildi ([Ember](https://ember-energy.org/latest-insights/turkiye-can-bypass-grid-constraints-with-hybrid-solar-power-plants/grid-connection-capacity-challenges-in-turkiye-and/)). Kapasite, en kötü iki anın (tam üretim + en düşük yük) aynı anda olacağını varsayan statik bir kuralla hesaplanıyor. Bu araç, bir trafo merkezi için gerçek hava ve yük belirsizliğini saat saat simüle ederek esnek (kısılabilir) bağlantıyla kaç MW daha bağlanabileceğini ve bunun yıllık kısıntı bedelini (P50/P90) hesaplar.
 
